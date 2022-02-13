@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --color-desaturated-dark-blue: hsl(214, 17%, 51%);
+    --color-grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ECF2F8;
+}
+.wrapper {
+    display: flex;
+    background: #fff;
+    font-family: "Manrope", "sans-serif";
+    font-size: 13px;
+    border-radius: 0.7rem;
+    position: relative;
+    box-shadow: 0 5px 30px rgb(72 85 106 / 20%);
+}
+.drawers {
+    width: 20rem;
+    border-radius: 0.7rem 0 0 0.7rem;
+    background-image: url(./images/drawers.jpg);
+    background-size: cover;
+    background-position: -11px 0;
+}
+.profile {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+.profile > img {
+    align-self: center;
+    border-radius: 50%;
+}
+.profile-image {
+    width: 2.5rem;
+}
+.article-container {
+    padding: 1.5rem 2.8rem 2.8rem 2.8rem;
+    max-width: 25rem;
+}
+.article-container > h1 {
+    color: var(--color-very-dark-grayish-blue);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-bottom: 0.3rem;
+}
+.article-container > p {
+    color: var(--color-desaturated-dark-blue);
+    font-size: 14px;
+    max-width: 27rem;
+}
+.name {
+    color: var(--color-very-dark-grayish-blue);
+    font-weight: 700;
+}
+.date {
+    color: var(--color-desaturated-dark-blue);
+}
+.share-button {
+    position: absolute;
+    right: 4%;
+    background: hsla(212, 23%, 69%, 0.39);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.share-button:hover {
+    background: var(--color-very-dark-grayish-blue);
+}
+.shareSVG {
+    padding: .550rem;
+}
+.shareSVG:hover {
+    filter: brightness(100);
+}
+
+.share-button-mobile {
+    position: absolute;
+    right: 10%;
+    top: 89%;
+    background: hsla(212, 23%, 69%, 0.39);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.share-button-mobile:hover {
+    background: var(--color-very-dark-grayish-blue);
+}
+
+.shareSVG-mobile {
+    padding: .550rem;
+}
+
+.shareSVG-mobile:hover {
+    filter: brightness(100);
+}
+
+
+.share-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background: var(--color-very-dark-grayish-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    position: absolute;
+    z-index: 999;
+}
+.share-icons-mobile {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background: var(--color-very-dark-grayish-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    padding: 1.5rem 8rem 1.7rem 2.5rem;
+    border-radius: 0 0 0.7rem 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    position: relative;
+    margin-top: -0.3rem;
+}
+.share-container-mobile {
+    display: none;
+    margin-top: 2rem;
+    padding: 0.6rem 0 0 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    visibility: hidden;
+
+}
+.triangle {
+    position: relative;
+    width: 20px;
+    aspect-ratio: 1;
+    top: 2.5rem;
+    left: 6.5rem;
+    background: var(--color-very-dark-grayish-blue);
+    transform: rotateY(0deg) rotate(45deg);
+}
+.share-container {
+    position: absolute;
+    top: 57%;
+    left: 76.5%;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+.show {
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+}
+.show-mobile-container {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+.hide-profile-container {
+    display: none;
+}
+.share-button-mobile {
+    visibility: hidden;
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        position: absolute;
+        flex-direction: column;
+    }
+    .drawers {
+        width: 100%;
+        background-position: 0 -50px;
+        border-radius: 0.7rem 0.7rem 0 0;
+    }
+    .article-container {
+        padding: 0;
+    }
+    .article-container > p {
+        max-width: 23rem;
+        padding: 0.5rem 2.8rem 0 2.8rem;
+    }
+    .article-container > h1  {
+        font-size: 1.3rem;
+        padding: 1.5rem 2.8rem 0 2.8rem;
+    }
+    .share-button {
+        visibility: hidden;
+    }
+    .share-button-mobile {
+        visibility: visible;
+    }
+    .profile {
+        padding: 0.2rem 2.8rem 2.2rem 2.8rem;
+    }
+}
